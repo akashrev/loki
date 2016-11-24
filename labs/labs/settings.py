@@ -26,7 +26,8 @@ SECRET_KEY = '@0n7tuknbq$&*(@gnfgn_z=d@0p3k*tfg+hna@2)60*0g(jbw7'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'labs',
+    'notlabs.reverieinc.com',
+    'labs.reverieinc.com',
     'localhost',
     '127.0.0.1',
 ]

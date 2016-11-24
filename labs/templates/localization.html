@@ -34,9 +34,8 @@
                         <th>
                             Localization
                         </th>
-                        <th>
-                            Score
-                        </th>
+
+                     <!--   <th>Score</th>  -->
                     </tr>
                     <tr>
                         {% for translation, score in result %}
@@ -44,9 +43,7 @@
                                 <td>
                                     {{ translation }}
                                 </td>
-                                <td>
-                                    {{ score }}
-                                </td>
+                                <!-- <td>{{ score }}</td>  -->
                             </tr>
                         {% endfor %}
                     </tr>

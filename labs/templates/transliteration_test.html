@@ -21,10 +21,8 @@
                 <input placeholder="Enter Text to Translate" type="text" name="search">
             <!--    <input type="submit" name = "submit" value="Translate" >    -->
                 <input id="submit" type = "submit" value="Translate" name="submit" >
-
             </form>
 
-            {% if result %}
                 <p>
                     <b>Input String:</b> {{search}}
                 </p>
@@ -33,50 +31,22 @@
                 <table>
                     <tr>
                         <th>
-                            Localization
+                            Transliteration
                         </th>
 
                      <!--   <th>Score</th>  -->
                     </tr>
                     <tr>
-                        {% for translation, score in result %}
                             <tr>
                                 <td>
-                                    {{ translation }}
+                                    {{ output }}
                                 </td>
                                 <!-- <td>{{ score }}</td>  -->
                             </tr>
-                        {% endfor %}
                     </tr>
                 </table>
         </center>
         <br />
-        <a href="javascript:;" onclick=show() >
-            <button class="button">
-                Request for JSON
-            </button>
-            <br/>
-            <br/>
-        </a>
-        <div id="expand">
-            <pre>
-                {{raw_json}}
-            </pre>
-        </div>
-
-        <script>
-            window.onload = function(){
-            document.getElementById('expand').style.display = 'none';
-            }
-        </script>
-
-        <center>
-             {% else %}
-                <p>
-                    <!-- You submitted an empty form. -->
-                </p>
-            {% endif %}
-        </center>
 
     </body>
 </html>

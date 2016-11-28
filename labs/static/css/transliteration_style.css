@@ -1,0 +1,132 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+
+
+#logo img{
+    position:fixed;
+    -webkit-transform: scale(0.4); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.4); /* FF3.5+ */
+    -ms-transform: scale(0.4); /* IE9 */
+    -o-transform: scale(0.4); /* Opera 10.5+ */
+    transform: scale(0.4);
+    left:-140px;
+    top:-120px;
+}
+
+.left{
+    display: block;
+/*    background-color:#f9f9f9;  */
+    width:20%;
+    height:90%;
+    float:left;
+    border: 0px solid ;
+    padding: 25px;
+    position:fixed;
+
+}
+
+.input{
+    position:absolute;
+    float: right;
+    top:200px;
+    left:600px;
+
+}
+
+/* search box and submit button */
+input[type=text] {
+    width: 200%;
+    padding: 9px 15px;
+    margin: 8px 0px 8px 0px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid ;
+
+}
+
+input[type=submit] {
+    width: 30%;
+    padding: 12px 25px;
+    margin: 8px 0px 8px 0px;
+    box-sizing: border-box;
+    background-color: #3CBC8D;
+    position:absolute;
+    top:17px;
+    right:-350px;
+    color:white;
+}
+
+
+.output{
+    display: block;
+    position:absolute;
+    top:400px;
+    left:600px;
+    background-color:#f9f9f9;
+}
+
+#language{
+    display:block;
+    padding: 10px 15px;
+
+}
+
+.button {
+    position: absolute;
+    left: 700px;
+    top:600px;
+}
+
+#button2{
+    position:absolute;
+    left: 100px;
+    top:0px;
+}
+
+input[type=button] {
+        width: 100%;
+    padding: 4px 5px;
+    margin: 5px 0px 5px 0px;
+    box-sizing: border-box;
+}
+
+
+
+.left{
+    display: block;
+    float:left;
+    position:fixed;
+    left:10px;
+    top:140px;
+    height:500px;
+    width:23%;
+    border: 1px solid ;
+    padding: 25px;
+    margin: 25px;
+    margin-top:50px;
+    display:flex;
+}
+
+#title{
+    position:relative;
+    display: block;
+    border: 1px solid ;
+    width:40px;;
+    height:10%;
+    flex:1;
+    top:-26px;
+}
+
+
+.screen{
+    display: block;
+    position:absolute;
+    top:400px;
+    height:155px;
+    width:35%;
+    left:700px;
+    background-color:#f9f9f9;
+}

@@ -9,6 +9,19 @@ body{
     font-family: 'Roboto Mono', monospace;
 }
 
+.left_section{
+    display: block;
+    background-color:#f9f9f9;
+    width:auto;
+    height:90%;
+    float:left;
+    border: 0px solid ;
+    padding: 25px;
+    position:fixed;
+
+}
+
+
 .left{
     display: block;
     float:left;
@@ -68,9 +81,9 @@ body{
 }
 
 h3{
-    position:fixed;
-    top:200px;
-    left:40px;
+position:relative;
+    top:125px;
+    left:px;
 }
 
 .right p{
@@ -86,6 +99,6 @@ h3{
     -ms-transform: scale(0.4); /* IE9 */
     -o-transform: scale(0.4); /* Opera 10.5+ */
     transform: scale(0.4);
-    left:-135px;
-    top:-100px;
+    left:-140px;
+    top:-120px;
 }

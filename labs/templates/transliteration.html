@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Reverie Transliteration</title>
+            <link rel="stylesheet" href="{% static "css/transliteration_style.css" %}" />
+            <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+            <script type="text/javascript" src="{% static "js/transliteration_style.js" %}"> </script>
+
+    </head>
+    <body>
+        <div id = "logo">
+            <img src = "{% static "images/logo1.png" %}"
+        </div>
+
+
+        <div class="left">
+            <div id="title"> Names & Addresses </div>
+            <div id="title"> Free Text(beta) </div>
+            <div id="title"> Products </div>
+
+
+        </div>
+
+        <div class="right">
+            <div class = "input">
+                Input text <br>
+                <form action="" method="get">
+
+                 <input placeholder="Enter Text to Translate" type="text" name="search">
+                 <input id="submit" type = "submit" value="GO" name="submit" >
+                 </form>
+            </div>
+            {% if output %}
+            <div class="output">
+                <div id ="language">Hindi </div>
+                <div id ="language">Tamil </div>
+                <div id ="language">Kannada </div>
+                <div id ="language">Marathi </div>
+            </div>
+            <div class= "screen">
+            {{ output }}
+            </div>
+            <div class ="button">
+                <div id = "button1">
+                    <input type="button" value="Love it!" name="like">
+                </div>
+                <div id ="button2">
+                    <input type="button" value="No way!" name="dislike">
+                </div>
+            </div>
+        </div>
+        {% else %}
+        {% endif %}
+
+    </body>
+</html>

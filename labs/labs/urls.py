@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from labs.views import index, localization
+from labs.views import index, localization, transliteration
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
     url(r'^localization/v1/$', localization),
+    url(r'^transliteration/v1/$', transliteration),
+
 ]

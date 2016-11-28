@@ -4,12 +4,14 @@
 from django.shortcuts import render
 import requests, json
 
+# function for labs index webpage
 
 def index(request):
     return render(request, 'index.html', {
             })
 
 
+# function for the localization function
 
 def translator_request(message):
     translation_score = []
@@ -45,6 +47,8 @@ def translator_request(message):
     return zipped, json_response
 
 
+# function for localization API on labs
+
 def localization(request):
 
     if request.GET.get('submit'):
@@ -60,3 +64,47 @@ def localization(request):
         return render(request, 'localization.html', {
             #'result': result,
             })
+
+
+# function for the transliteration function
+
+def transliterateapi_request(message):
+    def query():
+        return {
+            "inArray": [
+                message
+            ],
+            "REV-APP-ID": "rev.web.com.rev.master",
+            "REV-API-KEY": "9757f28c968b561ea36ffbea2ff562679148",
+            "domain": 3,
+            "language": "hindi",
+            "originLanguage": "hindi",
+            "webSdk": 0
+        }
+
+    response = requests.post('http://api.reverieinc.com/parabola/transliterateSimpleJSON', json=query())
+    #print response
+    json_response = json.dumps(response.json(), ensure_ascii=False, indent=4, sort_keys=True).encode('utf-8')
+    new_json = json.loads(json_response)
+    for key, value in new_json.items():
+        if key == 'outArray':
+            for item in value:
+                for key, value in item.items():
+                    if key == "transResponse":
+                        return value
+
+
+# function for the transliteration
+
+def transliteration(request):
+
+    if request.GET.get('submit'):
+        message = request.GET.get('search')
+        output = transliterateapi_request(message)
+        return render(request, 'transliteration.html', {
+            'output': output, 'search': message,
+    })
+
+    else:
+        return render(request, 'transliteration.html', {
+    })

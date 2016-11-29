@@ -69,29 +69,37 @@ def localization(request):
 # function for the transliteration function
 
 def transliterateapi_request(message):
-    def query():
-        return {
-            "inArray": [
-                message
-            ],
-            "REV-APP-ID": "rev.web.com.rev.master",
-            "REV-API-KEY": "9757f28c968b561ea36ffbea2ff562679148",
-            "domain": 3,
-            "language": "hindi",
-            "originLanguage": "hindi",
-            "webSdk": 0
-        }
+    url = "https://api-revup.reverieinc.com/apiman-gateway/akashWSXI/transliteration/1.0"
 
-    response = requests.post('http://api.reverieinc.com/parabola/transliterateSimpleJSON', json=query())
-    #print response
+    querystring = {"source_lang": "english", "target_lang": "hindi"}
+
+    headers = {
+        'rev-api-key': "b6aCmKy8Aq5TddB4OIIydmbqLuTvJv8KKWkG",
+        'rev-app-id': "com.akash.jain",
+        'content-type': "application/json",
+        'Accept-Encoding': None
+
+    }
+
+    data = {
+        "data": [
+            message
+        ]
+    }
+
+    #request.add_header('Accept-encoding', 'gzip')
+    response = requests.request("POST", url, headers=headers, params=querystring, json=data)
+    #response.add_header('Accept-encoding', 'gzip')
+    # print response.text
     json_response = json.dumps(response.json(), ensure_ascii=False, indent=4, sort_keys=True).encode('utf-8')
     new_json = json.loads(json_response)
+
     for key, value in new_json.items():
-        if key == 'outArray':
-            for item in value:
-                for key, value in item.items():
-                    if key == "transResponse":
-                        return value
+        for item in value:
+            for key, value in item.items():
+                if key == "outString":
+                    for i in value:
+                        return i
 
 
 # function for the transliteration

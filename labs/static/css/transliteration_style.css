@@ -4,26 +4,33 @@ body {
 
 
 #logo img{
+
     position:fixed;
-    -webkit-transform: scale(0.4); /* Saf3.1+, Chrome */
-    -moz-transform: scale(0.4); /* FF3.5+ */
-    -ms-transform: scale(0.4); /* IE9 */
-    -o-transform: scale(0.4); /* Opera 10.5+ */
-    transform: scale(0.4);
-    left:-80px;
-    top:-120px;
+    left:75px;
+    top:40px;
+    -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.8); /* FF3.5+ */
+    -ms-transform: scale(0.8); /* IE9 */
+    -o-transform: scale(0.8); /* Opera 10.5+ */
+    transform: scale(0.8);
+}
+
+#logo-text h3{
+    position:fixed;
+    left:167px;
+    top:55px;
 }
 
 
 .box{
 position:fixed;
-top:220px;
+top:170px;
 left:60px;
 font-size:75%
 }
 
 #name{
-    width: 28em; height: 11em;
+    width: 28em; height: 13em;
     overflow: auto;
     border: 1px solid #000000;
     text-overflow:clip;
@@ -31,7 +38,7 @@ font-size:75%
 }
 
 #text{
-    width: 28em; height: 11em;
+    width: 28em; height: 13em;
     overflow: auto;
     border: 1px solid #000000;
     text-overflow:clip;
@@ -40,7 +47,7 @@ font-size:75%
 }
 
 #products{
-    width: 28em; height: 11em;
+    width: 28em; height: 13em;
     overflow: auto;
     border: 1px solid #000000;
     text-overflow:clip;
@@ -250,7 +257,7 @@ display: inline-block;
     top: 395px;
 }
 
-.button2 {background-color: #008CBA;    top:434px;} /* Blue */
-.button3 {background-color: #f44336; top:490px;} /* Red */
+.button2 {background-color: #008CBA;    top:434px;} /* Green */
+.button3 {background-color: #f44336; top:490px;} /* Blue */
 .button3 {background-color: #f44336; top:470px;} /* Red */
 .button4 {background-color: #e7e7e7; color: black; top:510px;} /* Gray */

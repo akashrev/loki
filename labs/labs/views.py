@@ -87,10 +87,7 @@ def transliterateapi_request(message):
         ]
     }
 
-    #request.add_header('Accept-encoding', 'gzip')
     response = requests.request("POST", url, headers=headers, params=querystring, json=data)
-    #response.add_header('Accept-encoding', 'gzip')
-    # print response.text
     json_response = json.dumps(response.json(), ensure_ascii=False, indent=4, sort_keys=True).encode('utf-8')
     new_json = json.loads(json_response)
 
@@ -98,8 +95,8 @@ def transliterateapi_request(message):
         for item in value:
             for key, value in item.items():
                 if key == "outString":
-                    for i in value:
-                        return i
+                    for string in value:
+                        return string
 
 
 # function for the transliteration

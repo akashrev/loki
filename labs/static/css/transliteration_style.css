@@ -82,7 +82,7 @@ margin:10px;}
 
 /* search box and submit button */
 input[type=text] {
-    width: 200%;
+    width: 220%;
     padding: 9px 15px;
     margin: 8px 0px 8px 0px;
     box-sizing: border-box;
@@ -99,8 +99,14 @@ input[type=submit] {
     background-color: #3CBC8D;
     position:absolute;
     top:17px;
-    right:-350px;
+    right:-370px;
     color:white;
+}
+
+input[type=text]:hover {
+
+    border: none;
+    border-bottom: 2px solid blue;
 }
 
 
@@ -139,8 +145,7 @@ input[type=submit] {
 
 
 input[type=button] {
-        width: 100%;
-
+    width: 100%;
     padding: 7px 5px;
     margin: 5px 0px 5px 0px;
     box-sizing: border-box;

@@ -4,8 +4,8 @@
 from django.shortcuts import render
 import requests, json
 
-# function for labs index webpage
 
+# function for labs index webpage
 def index(request):
     return render(request, 'index.html', {
             })
@@ -66,12 +66,14 @@ def localization(request):
             })
 
 
+###########################################
 # function for the transliteration function
 
+# function takes input text and language as parameters and sending the request to the Transliteration API
 def transliterateapi_request(message, language):
     url = "https://api-revup.reverieinc.com/apiman-gateway/akashWSXI/transliteration/1.0"
 
-    querystring = {"source_lang": "english", "target_lang": language}
+    querystring = {"source_lang": "english", "target_lang": language}       # language selection
 
     headers = {
         'rev-api-key': "b6aCmKy8Aq5TddB4OIIydmbqLuTvJv8KKWkG",
@@ -83,14 +85,14 @@ def transliterateapi_request(message, language):
 
     data = {
         "data": [
-            message
+            message                 # input text message
         ]
     }
 
-    response = requests.request("POST", url, headers=headers, params=querystring, json=data)
+    response = requests.request("POST", url, headers=headers, params=querystring, json=data)    # sending request
     json_response = json.dumps(response.json(), ensure_ascii=False, indent=4, sort_keys=True).encode('utf-8')
     new_json = json.loads(json_response)
-
+    # getting output from JSON response
     for key, value in new_json.items():
         for item in value:
             for key, value in item.items():
@@ -99,16 +101,17 @@ def transliterateapi_request(message, language):
                         return string
 
 
+##################################
 # function for the transliteration
 
 def transliteration(request):
 
    # if request.GET.get('submit'):
     if request.GET.get('search'):
-        message = request.GET.get('search')
-        language = request.GET['language']
-        output = transliterateapi_request(message,language)
-        return render(request, 'transliteration.html', {
+        message = request.GET.get('search')     # reading text from textbox
+        language = request.GET['language']      # fetching selected language
+        output = transliterateapi_request(message,language) # calling function, sending text and language as parameters
+        return render(request, 'transliteration.html', {    # returning output text to the webpage
             'output': output, 'search': message,
     })
 

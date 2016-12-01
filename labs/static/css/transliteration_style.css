@@ -82,7 +82,7 @@ margin:10px;}
 
 /* search box and submit button */
 input[type=text] {
-    width: 100%;
+    width: 180%;
     padding: 9px 15px;
     margin: 8px 0px 8px 0px;
     box-sizing: border-box;

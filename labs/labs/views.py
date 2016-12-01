@@ -68,10 +68,10 @@ def localization(request):
 
 # function for the transliteration function
 
-def transliterateapi_request(message):
+def transliterateapi_request(message, language):
     url = "https://api-revup.reverieinc.com/apiman-gateway/akashWSXI/transliteration/1.0"
 
-    querystring = {"source_lang": "english", "target_lang": "hindi"}
+    querystring = {"source_lang": "english", "target_lang": language}
 
     headers = {
         'rev-api-key': "b6aCmKy8Aq5TddB4OIIydmbqLuTvJv8KKWkG",
@@ -103,9 +103,11 @@ def transliterateapi_request(message):
 
 def transliteration(request):
 
-    if request.GET.get('submit'):
+   # if request.GET.get('submit'):
+    if request.GET.get('search'):
         message = request.GET.get('search')
-        output = transliterateapi_request(message)
+        language = request.GET['language']
+        output = transliterateapi_request(message,language)
         return render(request, 'transliteration.html', {
             'output': output, 'search': message,
     })

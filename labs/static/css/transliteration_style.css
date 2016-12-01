@@ -32,7 +32,7 @@ font-size:75%
 #name{
     width: 28em; height: 13em;
     overflow: auto;
-    border: 1px solid #000000;
+    border: 1px solid #a5a5a5;
     text-overflow:clip;
     margin:10px;
 }
@@ -40,7 +40,7 @@ font-size:75%
 #text{
     width: 28em; height: 13em;
     overflow: auto;
-    border: 1px solid #000000;
+    border: 1px solid #a5a5a5;
     text-overflow:clip;
     top:300px;
     margin:10px;
@@ -49,7 +49,7 @@ font-size:75%
 #products{
     width: 28em; height: 13em;
     overflow: auto;
-    border: 1px solid #000000;
+    border: 1px solid #a5a5a5;
     text-overflow:clip;
     top:500px;
     margin:10px;
@@ -75,14 +75,14 @@ margin:10px;}
 .input{
     position:absolute;
     float: right;
-    top:300px;
+    top:280px;
     left:600px;
 
 }
 
 /* search box and submit button */
 input[type=text] {
-    width: 220%;
+    width: 100%;
     padding: 9px 15px;
     margin: 8px 0px 8px 0px;
     box-sizing: border-box;
@@ -236,15 +236,20 @@ display: inline-block;
     top:400px;
     height:155px;
     width:35%;
-    left:700px;
+    left:695px;
     background-color:#f9f9f9;
 }
 
 
-
+select {
+    min-width:44px;
+    min-height: 35px;
+    border-width: 3px;
+    border-color: rgba(50, 50, 50, 0.14);
+    margin: 10px 10px 10px 0px;
+}
 
 .button {
-    background-color: #4CAF50; /* Green */
     border: none;
     color: white;
     padding: 10px 22px;
@@ -258,8 +263,8 @@ display: inline-block;
     cursor: pointer;
     position:absolute;
     z-index:1;
-    left:596px;
-    top: 395px;
+    top:97px;
+    left:-18px;
 }
 
 .button2 {background-color: #008CBA;    top:434px;} /* Green */

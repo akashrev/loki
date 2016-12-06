@@ -32,7 +32,7 @@ def translator_engine(message):
             ]
         }
 
-    response = requests.post('http://52.163.231.207:8000/translator/', headers=headers, json=data())
+    response = requests.post('http://52.187.32.148:8000/translator/', headers=headers, json=data())
     json_response = json.dumps(response.json(), ensure_ascii=False, indent=4, sort_keys=True).encode('utf-8')
     #return json_response
     new_json = json.loads(json_response)

@@ -16,12 +16,26 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from labs.views import index, localization, transliteration
+from authentication.views import index, registration, base, user_login, user_logout, success, dashboard, cookiee, send_email
+
 
 
 urlpatterns = [
+    # labs URLs
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
     url(r'^localization/v1/$', localization),
     url(r'^transliteration/v1/$', transliteration),
+
+    # django auth URLs
+    url(r'^base/$', base),
+    url(r'^registration/$', registration),
+    url(r'^index/$', index),
+    url(r'^login/$', user_login),
+    url(r'^logout/$', user_logout),
+    url(r'^success/$', success),
+    url(r'^dashboard/$', dashboard),
+    url(r'^cookiee/$', cookiee),
+    url(r'^email/$', send_email),
 
 ]

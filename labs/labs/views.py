@@ -2,6 +2,11 @@
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, logout, update_session_auth_hash, login
+from django.core.mail import send_mail
+
 import requests, json
 
 ###################################################################################################################
@@ -85,6 +90,7 @@ def translator_reverie(message):
 # function for localization API on labs
 
 def localization(request):
+    username = request.session.get('username')
 
     if request.GET.get('submit'):
         message = request.GET.get('search')
@@ -101,6 +107,7 @@ def localization(request):
     else:
         #result = ''
         return render(request, 'localization.html', {
+        "username": username
             #'result': result,
             })
 
@@ -145,7 +152,8 @@ def transliterateapi_request(message, language):
 
 def transliteration(request):
 
-   # if request.GET.get('submit'):
+    # if request.GET.get('submit'):
+    username = request.session.get('username')
     if request.GET.get('search'):
         message = request.GET.get('search')     # reading text from textbox
         language = request.GET['language']      # fetching selected language
@@ -156,4 +164,5 @@ def transliteration(request):
 
     else:
         return render(request, 'transliteration.html', {
+            "username": username
     })

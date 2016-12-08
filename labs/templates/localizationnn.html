@@ -1,13 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
 
-{% extends "basee.html" %}
+    <head>
+        <title>Reverie Translator</title>
+        <link rel="stylesheet" href="{% static "css/localization_styles.css" %}" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <script type="text/javascript" src="{% static "js/style.js" %}"> </script>
+<script>
 
-{% block content %}
-                <link rel="stylesheet" href="../../static/css/localization_styles.css"  />
-
+</script>
+    </head>
+    <body>
         <center>
 <!--            <h1> Reverie Language Technologies </h1>    -->
-<a href="/index/">            <img src="../../static/images/reverie1.png" alt="Reverie Logo"  height="45%" width="40%" /> </a>
-            <img src="../../static/images/bubble.gif" alt="Labs Icon" height="60" width="40" /><br/>
+            <a href="/index/">
+                <img src="{% static "images/reverie1.png" %}" alt="Reverie Logo"  height="45%" width="40%" />
+            </a>
+            <img src="{% static "images/bubble.gif" %}" alt="Labs Icon" height="60" width="40" /><br/>
 
             <form action="" method="get">
                 <input placeholder="Enter Text to Translate" type="text" name="search">
@@ -69,4 +79,6 @@
                 </p>
             {% endif %}
         </center>
-{% endblock %}
+
+    </body>
+</html>

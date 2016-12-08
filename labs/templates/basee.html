@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Reverie Labs - Reverie Language Technology</title>
+         <link type="text/css" rel="stylesheet" href="{% static "css/auth_styles.css" %}" />
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        <script type="text/javascript" src="{% static "js/style.js" %}"> </script>
+
+{% block header %}
+
+{% endblock %}
+
+    </head>
+
+    <body>
+        <div class = "header">
+
+            <div id="bar1">
+                <a href="/index/">
+                    Home
+                </a>
+            </div>
+
+                {% if username %}
+
+                    <div id="bar4">
+                        <a href="/logout/">
+                            Logout
+                        </a>
+                    </div>
+
+                    <div id="bar5">
+                        <a href="/dashboard/">
+                            Dashboard
+                        </a>
+                    </div>
+                <br/>
+                <div id = "bar7"> Welcome {{ username }}</div>
+
+
+                {% else %}
+
+
+                    <div id="bar2">
+                        <a href="/login/">
+                            Login
+                        </a>
+                    </div>
+
+                    <div id="bar3">
+                        <a href="/registration/">
+                            SignUp
+                        </a>
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+
+        </div>
+
+
+    {% block content %}{% endblock %}
+
+    </body>
+</html>

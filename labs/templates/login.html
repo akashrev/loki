@@ -1,0 +1,17 @@
+{% extends "basee.html" %}
+
+{% block content %}
+
+
+<div class="login_form">
+
+    <form method="post" action="">{% csrf_token %}
+
+        Username:<input type="text" name = "username"> <br/>
+        Password<input type="password" name = "password"><br />
+        <input id="submit" type = "submit" value="Submit" name="submit" >
+
+    </form>
+</div>
+
+{% endblock %}

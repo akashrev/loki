@@ -101,7 +101,7 @@ def localization(request):
 
         output = engine_result+reverie_result
         return render(request, 'localization.html', {
-            'search': message, 'result': output, 'raw_json': engine_json+'\n'+reverie_json,
+            'search': message, 'result': output, 'raw_json': engine_json+'\n'+reverie_json, "username": username
         })
 
     else:
@@ -159,7 +159,7 @@ def transliteration(request):
         language = request.GET['language']      # fetching selected language
         output = transliterateapi_request(message,language) # calling function, sending text and language as parameters
         return render(request, 'transliteration.html', {    # returning output text to the webpage
-            'output': output, 'search': message,
+            'output': output, 'search': message, "username": username
     })
 
     else:

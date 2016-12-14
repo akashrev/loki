@@ -126,13 +126,16 @@ def send_email(request):
 
 def send_email(request):
     send_mail(
-        'Subject here',
-        'Here is the message.',
-        'django@example.com',
-        ['akash.jain@reverieinc.com'],
+        'Subject here',                 # subject
+        'Here is the message.',         # message
+        'django@example.com',           # sender email address
+        ['akash.jain@reverieinc.com'],  # target email address
         fail_silently=False,
     )
     return HttpResponseRedirect('/dashboard/')
+
+# working command
+# send_mail('subject', 'message', 'akash.jain@reverieinc.com', ['akash.jain@reverieinc.com'])
 
 
 """

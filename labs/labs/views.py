@@ -56,14 +56,17 @@ def translator_engine(message):
 
 
 def translator_reverie(message):
-    url = "http://beta.auth.revup.reverieinc.com/apiman-gateway/ReverieMobility/Localization/1.0"
+#    url = "http://beta.auth.revup.reverieinc.com/apiman-gateway/ReverieMobility/Localization/1.0"
+    url = "https://api-gw.revup.reverieinc.com/apiman-gateway/labs/localization/1.0"
 
     querystring = {"target_lang": "hindi", "source_lang": "english", "domain": "3"}
 
     headers = {
         'content-type': "application/json",
-        'rev-api-key': "1gMnmV0vdkBNkS1SY3uaCMkh3cL883MyPNps",
-        'rev-app-id': "com.mobility.android",
+        'rev-api-key': "HQR83FQDpcDwrEoavyunux13O55JyFpmCPwc",
+        #'rev-api-key': "1gMnmV0vdkBNkS1SY3uaCMkh3cL883MyPNps",
+        #'rev-app-id': "com.mobility.android",
+        'rev-app-id': "labs.test.api",
         'cache-control': "no-cache",
         'postman-token': "c626987f-0ce2-5f6a-7909-321db1bb3fe0"
     }

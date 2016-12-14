@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8" />
+<title>Reverie Labs - Transliteration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+
+<!-- BEGIN PLUGIN CSS -->
+<link href="{% static "assets/plugins/pace/pace-theme-flash.css" %}" rel="stylesheet" type="text/css" media="screen"/>
+<!-- END PLUGIN CSS -->
+<!-- BEGIN CORE CSS FRAMEWORK -->
+<link href="{% static "assets/plugins/boostrapv3/css/bootstrap.min.css" %}"  rel="stylesheet" type="text/css"/>
+<link href="{% static "assets/plugins/boostrapv3/css/bootstrap-theme.min.css" %}"  rel="stylesheet" type="text/css"/>
+<link href="{% static "assets/plugins/font-awesome/css/font-awesome.css" %}"  rel="stylesheet" type="text/css"/>
+<link href="{% static "assets/css/animate.min.css" %}"  rel="stylesheet" type="text/css"/>
+<link href="{% static "assets/plugins/jquery-scrollbar/jquery.scrollbar.css" %}"  rel="stylesheet" type="text/css"/>
+<!-- END CORE CSS FRAMEWORK -->
+<!-- BEGIN CSS TEMPLATE -->
+<link href="{% static "assets/css/style.css" %}"  rel="stylesheet" type="text/css"/>
+<link href="{% static "assets/css/responsive.css" %}"  rel="stylesheet" type="text/css"/>
+<link href="{% static "assets/css/custom-icon-set.css" %}"  rel="stylesheet" type="text/css"/>
+<!-- END CSS TEMPLATE -->
+
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<body class="">
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse "> 
+  <!-- BEGIN TOP NAVIGATION BAR -->
+  <div class="navbar-inner">
+	<div class="header-seperation"> 
+		<ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">	
+		 <li class="dropdown"> <a id="main-menu-toggle" href="#main-menu"  class="" > <div class="iconset top-menu-toggle-white"></div> </a> </li>		 
+		</ul>
+      <!-- BEGIN LOGO -->	
+      <a href="index.html"><img src="{% static "assets/img/logo.png" %}" class="logo" alt=""  data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="70%" /></a>
+      <!-- END LOGO --> 
+     
+      </div>
+      <!-- END RESPONSIVE MENU TOGGLER --> 
+      
+      
+   
+  </div>
+  <!-- END TOP NAVIGATION BAR --> 
+</div>
+<!-- END HEADER -->
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid " style="margin-bottom: 20px">
+<div class="page-sidebar" id="main-menu">
+    <!-- BEGIN MINI-PROFILE -->
+    <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
+      
+      <!-- BEGIN SIDEBAR MENU -->
+      
+      <ul>
+        <li class=""> <a href="/transliteration/v2/"> <i class="fa fa-th"></i> <span class="title">Transliteration</span> <span class="label label-important pull-right ">V 1.1</span></a> </li>
+        <li class=""> <a href="/localization/v2/"> <i class="fa fa-th"></i> <span class="title">Assisted Localization</span> <span class="label label-success pull-right ">BETA</span></a> </li>
+      </ul>
+      
+      <div class="clearfix"></div>
+      <!-- END SIDEBAR MENU -->
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="content" style="padding-top: 10px !important">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>REVERIE TRANSLITERATION</h2>
+          <span style="font-size: 1.5em" >Padhein wahi shabd aasaani se. पढ़ें वही शब्द आसानी से.</span>
+          <br>
+          <span style="font-size: 1.5em" >मेक योर टेक्स्ट रीड मोर ईजिली रीडॅब्ल. Make your text read more easily readable</span>
+        </div>
+        
+      </div>
+      
+      <div class="row" style="margin-top: 2.5em">
+        <div class="col-md-12">
+          <div class="tiles green m-b-12">
+              <div class="tiles-body">
+                <li><span>Benchmarked at 50-100% better for Indian Names, Addresses, Brandnames</span></li>
+                <li><span>Supports transliteration from English to 12 Indian languages</span></li>
+                <li><span>Recognizes and leaves untouched URLs, Coupon/Product codes, etc.</span></li>
+                <li><span>Supports custom dictionaries handling (coming soon..)</span></li>
+              </div>      
+          </div>  
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 2.5em">
+        <div class="col-md-12">
+          <h3>SELECT A TEXT HERE</h3>
+          
+        </div>
+      </div>
+      <div class="tab-pane" id="tab1hellowWorld">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="tabbable tabs-left">
+              <ul class="nav nav-tabs" id="tab-2">
+                <li id="tab1"><a href="#tab2hellowWorld">Indian Names & Addresses</a></li>
+                <li id="tab2"><a href="#tab2FollowUs">Brand Names</a></li>
+                <li><a href="#tab2Inspire">Free Text  <span class="label label-success"> BETA</span></a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab2hellowWorld">
+                    <div class="col-md-12">
+                      <span class="rev-trans a" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Sameer Shisodia, C 208, Redwoods, Sarjapura Road, Bangalore 560102</span> 
+                      <br>
+                      <span class="rev-trans a" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Debasis Sundhararajan; Bannerghatta Road, Next to Marble Centre </span>
+                      <br>
+                      <span class="rev-trans a" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Naveen Tikaram; 8th Main,4th Block, Koramangala, Bangalore</span> 
+                      <br>
+                      <span class="rev-trans a" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Amrish Ilyas; Sri Muneswara Estate, Above Vijaya Bank, Tumkur Road</span>
+                      <br>
+                      <span class="rev-trans a" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Sneha; 1’B’ Main Road, 7th Block, Koramangala</span> 
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab2FollowUs">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <span class="rev-trans b" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Samsung Galaxy Note 7</span> 
+                      <br>
+                      <span class="rev-trans b" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Puma ZigZag Running Black Shoes </span>
+                      <br>
+                      <span class="rev-trans b" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Lenovo Ideapad Y900 17</span> 
+                      <br>
+                      <span class="rev-trans b" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Nike Black SIGNAL TEE</span>
+                      <br>
+                      <span class="rev-trans b" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Himalaya Herbals Protein Hair Cream</span> 
+                  </div>
+                </div>
+                </div>
+                <div class="tab-pane" id="tab2Inspire">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <span class="rev-trans c" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Aapsey milkar khushi huee!</span> 
+                      <br>
+                      <span class="rev-trans c" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Mujhey Hindi bhaashaa acchee lagtee hai</span>
+                      <br>
+                      <span class="rev-trans c" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Kya mein aapki madad kar sakta hoon?</span> 
+                      <br>
+                      <span class="rev-trans c" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Seedhey jaaey! Phir baae, phir dae mudiye</span>
+                      <br>
+                      <span class="rev-trans c" style="cursor:pointer;background: antiquewhite; font-size: 20px;margin-top: 5px">Kyaa aap ko yahaan accha lagtaa hai?</span> 
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+        <div class="form-group">
+          <label class="form-label">Your Input String</label>
+                <div class="controls">
+                    <input id="requestString" class="form-control" placeholder="your text here" type="text" style="font-size: 1.7em">
+                </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2em">
+         <div class="col-md-4">
+         <div class="form-group">
+          <label class="form-label">Select Language</label>
+                
+                    <select id="languageVal">
+                      <option value="hindi">hindi</option>
+                      <option value="odia">odia</option>
+                      <option value="bengali">bengali</option>
+                      <option value="assamese">assamese</option>
+                      <option value="tamil">tamil</option>
+                      <option value="telugu">telugu</option>
+                      <option value="kannada">kannada</option>
+                      <option value="malayalam">malayalam</option>
+                      <option value="punjabi">punjabi</option>
+                      <option value="gujarati">gujarati</option>
+                      <option value="marathi">marathi</option>
+                    </select>
+                
+          </div>
+          
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label class="form-label">Select Domain</label>
+            <select id="domainVal">
+              <option value="1">Indian Names & Addresses</option>
+              <option value="2">Brand Names</option>
+              <option value="3">Free Text(beta)</option>
+            </select>
+         </div>
+        </div>
+         <div class="col-md-4">
+          <button id="tryapi" class="btn btn-primary form-control">Try It Now</button>
+        </div>
+      </div>
+      <div class="row" id="responseZone">
+        <div class="col-md-12">
+          <h3>Response</h3>
+          <div class="form-group">
+            <div class="controls">
+                <input id="responseString" class="form-control" placeholder="your response here" type="text" style="font-size: 1.7em" readonly>
+            </div>
+          </div>
+          <div class="postman-run-button" data-postman-action="collection/import" data-postman-var-1="912b2272629a78697c1d"></div>
+        </div>
+      </div>
+
+      <div class="row" id="responseZone">
+        <div class="col-md-6">
+        <h3>Rate It</h3>
+          <fieldset class="rating">
+            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+            <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+            <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+            <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+            <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+            <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+          </fieldset>
+          <div class="form-group">
+            <input id="suggestion" class="form-control" placeholder="Suggestions Here" type="text" >
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary form-control"> Let Us Know</button>
+          </div>
+          <div class="form-group">
+            <a href="https://revup.reverieinc.com/dashboard/" class="btn btn-primary form-control">SignUp for Free Trial</a>
+          </div>
+        </div>
+      
+        
+      </div>
+      
+      
+    </div>
+    
+  </div>
+  
+</div>
+<!-- END CONTAINER --> 
+
+
+<!-- BEGIN CORE JS FRAMEWORK--> 
+<script src="{% static "assets/plugins/jquery-1.8.3.min.js" %}"   type="text/javascript"></script> 
+<script src="{% static "assets/plugins/boostrapv3/js/bootstrap.min.js" %}"  type="text/javascript"></script> 
+<script src="{% static "assets/plugins/breakpoints.js" %}"  type="text/javascript"></script> 
+<script src="{% static "assets/plugins/jquery-unveil/jquery.unveil.min.js" %}"  type="text/javascript"></script> 
+<script src="{% static "assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js" %}"  type="text/javascript"></script>
+<!-- END CORE JS FRAMEWORK --> 
+<!-- BEGIN PAGE LEVEL JS --> 
+<script src="{% static "assets/plugins/pace/pace.min.js" %}"  type="text/javascript"></script>  
+<script src="{% static "assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" %}"  type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS --> 	
+<script src="{% static "assets/js/tabs_accordian.js" %}"  type="text/javascript"></script>
+
+<!-- BEGIN CORE TEMPLATE JS --> 
+<script src="{% static "assets/js/core.js" %}"  type="text/javascript"></script> 
+<script src="{% static "assets/js/chat.js" %}"  type="text/javascript"></script> 
+<!-- END CORE TEMPLATE JS --> 
+<script>
+  (function (p,o,s,t,m,a,n) {
+    !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+    !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+      (n = o.createElement("script")),
+      (n.id = s+t), (n.async = 1), (n.src = m), n
+    ));
+  }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+ 
+  $(".rev-trans").click(function(){
+    $("#requestString").val(this.childNodes[0].data);
+  })
+
+  $("#tryapi").click(function(){
+    if($("#requestString")[0].value.length!=0)
+      makethecall($("#requestString")[0].value);
+    else
+      alert("Please Fill in some string")
+  })
+  function makethecall(input){
+    var language = $("#languageVal")[0].value
+    var domain = $("#domainVal")[0].value
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://localhost:8000/transliteration/api?search="+input+"&language="+language+"&domain="+domain,
+      "method": "GET",
+      "headers": {}
+    }
+
+    $.ajax(settings).done(function (response) {
+      res = JSON.parse(response)
+      location.href="#responseZone"
+      $("#responseString")[0].value = res.output
+    });
+    
+    
+  }
+
+  
+</script>
+</body>
+</html>

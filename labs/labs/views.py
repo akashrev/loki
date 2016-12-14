@@ -3,7 +3,7 @@
 
 from django.shortcuts import render
 import requests, json
-
+from django.http import HttpResponse
 # function for labs index webpage
 
 def index(request):
@@ -65,17 +65,23 @@ def localization(request):
             #'result': result,
             })
 
+def labsTransliterate(request):
+
+        return render(request, 'labs-transliterate.html', {
+            #'result': result,
+    })
+
 
 # function for the transliteration function
 
-def transliterateapi_request(message, language):
-    url = "https://api-revup.reverieinc.com/apiman-gateway/akashWSXI/transliteration/1.0"
+def transliterateapi_request(message, language, domain):
+    url = "https://api-gw.revup.reverieinc.com/apiman-gateway/ReverieLabs/transliteration/1.0"
 
-    querystring = {"source_lang": "english", "target_lang": language}
+    querystring = {"source_lang": "english", "target_lang": language, "domain": domain}
 
     headers = {
-        'rev-api-key': "b6aCmKy8Aq5TddB4OIIydmbqLuTvJv8KKWkG",
-        'rev-app-id': "com.akash.jain",
+        'rev-api-key': "2nReLrtFB5BkH6oOkmiytPJPXs39RXXHXuoO",
+        'rev-app-id': "com.reverie.labs",
         'content-type': "application/json",
         'Accept-Encoding': None
 
@@ -115,3 +121,18 @@ def transliteration(request):
     else:
         return render(request, 'transliteration.html', {
     })
+
+def assistedLocalization(request):
+        return render(request, 'assistedLocalization.html', {
+    })
+
+def labstransliteration(request):
+
+   # if request.GET.get('submit'):
+    if request.GET.get('search'):
+        message = request.GET.get('search')
+        language = request.GET['language']
+        domain = request.GET['domain']
+        output = transliterateapi_request(message,language,domain)
+        return HttpResponse(json.dumps({'output': output
+            }))

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from labs.views import index, localization, transliteration
+from labs.views import index, localization, transliteration, labsTransliterate, labstransliteration,assistedLocalization
 
 
 urlpatterns = [
@@ -23,5 +23,8 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^localization/v1/$', localization),
     url(r'^transliteration/v1/$', transliteration),
+    url(r'^transliteration/v2/$', labsTransliterate),
+    url(r'^transliteration/api/$', labstransliteration),
+    url(r'^localization/v2/$', assistedLocalization),
 
 ]

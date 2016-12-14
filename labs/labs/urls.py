@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from labs.views import index, localization, transliteration, labsTransliterate, labstransliteration,assistedLocalization
+from labs.views import index, localization, transliteration, labsTransliterate, labstransliteration,assistedLocalization,requestLocalization
 
 from authentication.views import index, registration, base, user_login, user_logout, success, dashboard, cookiee, send_email
 
@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^transliteration/v2/$', labsTransliterate),
     url(r'^transliteration/api/$', labstransliteration),
     url(r'^localization/v2/$', assistedLocalization),
+    url(r'^localization/upload/$',requestLocalization ),
 
     # django auth URLs
     url(r'^base/$', base),

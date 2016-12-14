@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, update_session_auth_hash, login
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 
 import requests, json
 
@@ -189,3 +189,25 @@ def labstransliteration(request):
         output = transliterateapi_request(message,language,domain)
         return HttpResponse(json.dumps({'output': output
             }))
+
+def requestLocalization(request):
+
+   # if request.GET.get('submit'):
+    if request.POST and request.FILES:
+        
+        usrinfo = {"name" : request.POST.get('username') , "email": request.POST.get('email'), "contact":request.POST.get('contact'), "organization":request.POST.get('organization')}
+        print usrinfo
+        info = json.dumps(usrinfo)
+        file = request.FILES['file']
+        mail = EmailMessage("New Assisted Localization Request", info, "revup@reverieinc.com", ["sidharth.sahu@reverieinc.com"])
+        mail.attach(file.name, file.read(), file.content_type)
+        mail.send()
+        return HttpResponse(json.dumps({'output': "successfully uploaded"
+                }))
+
+
+
+
+
+
+

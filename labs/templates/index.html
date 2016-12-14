@@ -1,102 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Reverie Labs - Reverie Language Technology</title>
-        <link rel="stylesheet" href="../static/css/index_style.css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+{% extends "basee.html" %}
 
-    </head>
-    <body>
-
-        <div class="left_section">
-
-            <div class="logo">
-                <img src = "../static/images/logo1.png" /><br/>
-            </div>
-
-            <h3>
-                the language lab
-            </h3>
-            <!--
-
-            <div class="left">
-                <img src = "../stuffs/dummy.jpg" height="100px" width="140px" /><br/>
-                <img src = "../stuffs/dummy.jpg" height="100px" width="140px"  /><br/>
-                <img src = "../stuffs/dummy.jpg" height="100px" width="140px"  /><br/>
-                <img src = "../stuffs/dummy.jpg" height="100px" width="140px"  /><br/>
-
-            </div>
-
-            -->
-
-        </div>
+{% block content %}
 
 
-        <div class="middle_description">
-            <div id = "localization">
-                <h4>Localization</h4>
-                <p>This API does preprocessing + translation and then evaluates against a language model.
-                    Post-processing is in the works but feel free to #goforit".</p>
-                <br/>
-            </div>
-             <div id = "transliteration">
-                <h4>Transliteration</h4>
-                <p>
+
+<h3>
+<br/><br/><br/><br/>
+    Welcome to the home page
+
+</h3>
 
 
-                    Transliteration is the conversion of a text from one script to another.
-
-Transliteration is not concerned with representing the sounds of the original, only the characters, ideally accurately and unambiguously.
-
-
-                </p><br/>
-            </div>
-            <div id = "search">
-                <h4>Search Assist</h4>
-                <p>ETA - 5 Dec 2016.</p><br/>
-            </div>
-            <div id = "lookup">
-                <h4>Managed Lookup</h4>
-                <p>ETA - 14 Dec 2016.
-                </p><br/><br/>
-            </div>
-
-
-            <!-- 4th and 5th section
-
-            <div id = "lookup1">
-                <h4>Next Product Here</h4>
-                    <p>Coming soon.</p><br/><br/>
-            </div>
-            <div id = "lookup2">
-                <h4>Next Product Here</h4>
-                    <p>Coming soon.</p>
-            </div>
-
-
-            -->
-
-        </div>
-
-        <div class="right">
-            <a href='/localization/v1/' class='one'><p> #goforit</p><img src='../static/images/gocart.png' title="Reverie Labs" height="60" width="75"></a><br/><br/><br/>
-
-                <a href='/transliteration/v1/' class='two'> <img src='../static/images/gocart.png' title="Reverie Labs" height="60" width="75"></a><br/><br/>
-            <div id="gray">
-                <a href='#' class='three'><img src='../static/images/gocart.png' title="Reverie Labs" height="60" width="75"></a><br/><br/><br/>
-                <a href='#' class='three'><img src='../static/images/gocart.png' title="Reverie Labs" height="60" width="75"></a><br/><br/><br/><br/>
-
-
-                <!-- 4th and 5th section
-
-                <a href='#' class='three'><img src='../static/images/gocart.png' title="Reverie Labs" height="60" width="75"></a><br/><br/><br/>
-                <a href='#' class='three'><img src='../static/images/gocart.png' title="Reverie Labs" height="60" width="75"></a><br/>
-
-                -->
-
-            </div>
-        </div>
-
-    </body>
-</html>
+{% endblock %}

@@ -1,0 +1,91 @@
+body{
+
+}
+
+.header{
+    position:absolute;
+    float:right;
+    background-color:#f9f9f9;
+    right:40px;
+    top:10px;
+}
+
+#bar1 {
+    display:inline-block;
+    left:800px;
+    background-color:#aaf;
+    height:20px;
+    padding:10px;
+    border: 1px solid black;
+}
+
+#bar2 {
+    display:inline-block;
+    left:900px;
+    background-color:#aaf;
+    height:20px;
+    width:50px;
+    padding:10px;
+    border: 1px solid black;
+
+}
+
+#bar3 {
+    left:1000px;
+    background-color:#aaf;
+    display:inline-block;
+    height:20px;
+    padding:10px;
+    border: 1px solid black;
+
+}
+
+#bar4 {
+    background-color:#aaf;
+    display:inline-block;
+    height:20px;
+    left:1100px;
+    padding:10px;
+    border: 1px solid black;
+
+}
+
+#bar5 {
+    background-color:#aaf;
+    display:inline-block;
+    height:20px;
+    left:1100px;
+    padding:10px;
+    border: 1px solid black;
+
+}
+
+
+#bar7 {
+    background-color:#f9f9f9;
+    display:inline-block;
+    height:10px;
+    left:1000px;
+    padding:1px;
+    border: px solid black;
+
+}
+
+
+
+.logo{
+    position:absolute;
+    top:10px;
+    left:30px;
+}
+
+
+.registration_form{
+    position:absolute;
+    top:120px;
+}
+
+.login_form{
+    position:absolute;
+    top:120px;
+}

@@ -1,0 +1,20 @@
+{% extends "basee.html" %}
+
+{% block content %}
+
+<div class="registration_form">
+    <form method ="post" action="">{% csrf_token %}
+
+        <h2> User Registration Page</h2>
+        Username*:<input type="text" name = "username" /> <br/>
+        Email*:<input type="text" name = "email" /> <br/>
+        Password*:<input type="password" name = "password" /><br />
+        Confirm Password*:<input type="password" name = "password1" /><br />
+
+        <input id="submit" type = "submit" value="Submit" name="submit" />
+        <input id="reset" type = "reset" value="Reset" name="reset" />
+    </form>
+
+</div>
+
+{% endblock %}

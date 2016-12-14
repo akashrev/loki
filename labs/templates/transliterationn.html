@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Reverie Transliteration</title>
+            <link rel="stylesheet" href="{% static "css/transliteration_style.css" %}" />
+            <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+            <script type="text/javascript" src="{% static "js/transliteration_style.js" %}"> </script>
+            <script src="https://code.jquery.com/jquery-2.0.2.js"></script>
+
+            <script>
+                $(document).on('click', '.copy', function(e) {
+                e.preventDefault(); //for <a>
+                $('.paste').val($(this).text());
+                });
+
+            </script>
+
+
+    </head>
+    <body>
+        <div id = "logo">
+            <a href="../../"> <img src = "{% static "images/language.png" %}"> </a>
+        </div>
+        <div id ="logo-text"><h3>TRANSLITERATION</h3></div>
+
+
+        <div class="box">
+            <div id="name">
+                <h3> <center>Names & Addresses</center></h3>
+                <p>
+                    <ul>
+                        <li class="copy"> Aditi Musunur; Laxmi Complex, Lal Bagh Road, Bangalore </li>
+                        <li class="copy">Naveen Tikaram; 8th Main,4th Block, Koramangala, Bangalore</li>
+                        <li class="copy"> Jitendra Choudhary; Richmond road, Bangalore</li>
+                        <li class="copy">Hardeep Suksma; Ramana Maharshi Road, Bangalore  </li>
+                        <li class="copy">Gopa Trilochana; 7th Cross, Goutham Nagar, Srirampuram </li>
+                        <li class="copy">Debasis Sundhararajan; Bannerghatta Road, Next to Marble Centre International,Adugodi  </li>
+                        <li class="copy"> Amrish Ilyas; Sri Muneswara Estate, Above Vijaya Bank, Opposite Wipro Pillar Number 33, Tumkur Road  </li>
+                        <li class="copy"> Advitiya Sujeet; Behind Yelahanka Police Station, Bangalore</li>
+                        <li class="copy">Avantas Ghosal; Apprentice School, HAL Colony, Town ship </li>
+                        <li class="copy">Priyanka; 18 Cross,11 Main, Mallewaram, Bangalore  </li>
+                        <li class="copy">Sneha; 1’B’ Main Road, 7th Block, Koramangala </li>
+                        <li class="copy">Varsha; 8, Crescent Road, Bangalore</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div id="text">
+                <h3> <center>Free Text (beta) </center></h3>
+                <p>
+                    <ul>
+                        <li class="copy">Aapka naam kyaa hai? </li>
+                        <li class="copy">Aapsey milkar khushi huee!</li>
+                        <li class="copy">Kyaa aap ko yahaan accha lagtaa hai?</li>
+                        <li class="copy">Mujhey Hindi bhaashaa acchee lagtee hai. </li>
+                        <li class="copy">main ek mahine se hindi seekh raha hoon.</li>
+                        <li class="copy">Mujhey bhookh lagi hai.</li>
+                        <li class="copy">Gazal Fashions Multicolor Georgette Saree </li>
+                        <li class="copy">Meri Tabiyat kharaab hai.</li>
+                        <li class="copy">Natraj Blue Silk Saree</li>
+                        <li class="copy">Kya mein aapki madad kar sakta hoon? </li>
+                        <li class="copy">Seedhey jaaey! Phir baae, phir dae mudiye</li>
+                        <li class="copy">Arey! yeh kya hai?</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div id="products">
+                <h3> <center>Products</center> </h3>
+                <p>
+                    <ul>
+                        <li class="copy">Gazal Fashions Multicolor Georgette Saree</li>
+                        <li class="copy">Ayodhya Saree Black Georgette Saree</li>
+                        <li class="copy">Natraj Blue Silk Saree</li>
+                        <li class="copy">Gazal Fashions Multicolor Georgette Saree </li>
+                        <li class="copy">Ayodhya Saree Black Georgette Saree</li>
+                        <li class="copy">Natraj Blue Silk Saree</li>
+                        <li class="copy">Gazal Fashions Multicolor Georgette Saree </li>
+                        <li class="copy">Ayodhya Saree Black Georgette Saree</li>
+                        <li class="copy">Natraj Blue Silk Saree</li>
+                        <li class="copy">Gazal Fashions Multicolor Georgette Saree </li>
+                        <li class="copy">Ayodhya Saree Black Georgette Saree</li>
+                        <li class="copy">Natraj Blue Silk Saree</li>
+                    </ul>
+                </p>            </div>
+
+        </div>
+
+
+
+<!--
+        <div class="left">
+         <div class="block">
+            <div id="title"> Names & Addresses </div
+            <div id="title"> Free Text(beta) </div>
+            <div id="title"> Products </div>
+
+         </div>
+
+        </div>
+
+-->
+
+
+        <div class="right">
+            <div class = "input">
+                Input text (beta) <br>
+                <form action="" method="get" ><!--  onSubmit="return saveComment();">  -->
+
+                    <input placeholder="Enter Text to Translate" type="text" class="paste" name="search" id="search" value="" />
+
+
+
+                    <div class="button">
+                        <select name = "language" onchange='this.form.submit();'>
+                            <option value="hindi" selected>Language</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="assamese">Assamese</option>
+                            <option value="bengali">Bengali</option>
+                            <option value="gujarati">Gujarati</option>
+                            <option value="kannada">Kannada</option>
+                            <option value="malayalam">Malayalam</option>
+                            <option value="marathi">Marathi</option>
+                            <option value="odia">Odia</option>
+                            <option value="punjabi">Punjabi</option>
+                            <option value="tamil">Tamil</option>
+                            <option value="telugu">Telugu</option>
+
+                        </select>
+                    </div>
+                        <noscript><input id="submit" type = "submit" value="submit" name="submit" ></noscript>
+
+                </form>
+                                    {% if output %}
+
+            </div>
+
+
+            <!--                    <button class="button button2">Tamil</button>
+                    <button class="button button3">Kannada</button>
+                    <button class="button button4">Marathi</button>
+
+            <div class="output">
+
+
+                <div id ="language">Hindi </div>
+                <div id ="language">Tamil </div>
+                <div id ="language">Kannada </div>
+                <div id ="language">Marathi </div>
+            </div>
+
+
+            -->
+            <div class= "screen">
+            {{ output }}
+            </div>
+            <div class ="buttonn">
+                <div id = "button11">
+                    <input type="button" value="Love it!" name="like">
+                </div>
+                <div id ="button21">
+                    <input type="button" value="No way!" name="dislike">
+                </div>
+            </div>
+        </div>
+        {% else %}
+        {% endif %}
+
+    </body>
+</html>

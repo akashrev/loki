@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load staticfiles %}
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Reverie Transliteration</title>
+{% extends "basee.html" %}
+
+{% block header %}
+            {% load staticfiles %}
+
             <link rel="stylesheet" href="{% static "css/transliteration_style.css" %}" />
             <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
             <script type="text/javascript" src="{% static "js/transliteration_style.js" %}"> </script>
@@ -19,9 +18,12 @@
             </script>
 
 
-    </head>
-    <body>
-        <div id = "logo">
+{% endblock %}
+
+
+{% block content %}
+
+        <div id = "logoo">
             <a href="../../"> <img src = "{% static "images/language.png" %}"> </a>
         </div>
         <div id ="logo-text"><h3>TRANSLITERATION</h3></div>
@@ -169,5 +171,4 @@
         {% else %}
         {% endif %}
 
-    </body>
-</html>
+{% endblock %}

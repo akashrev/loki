@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+    <head>
+        <title>Reverie Translator</title>
+        <link rel="stylesheet" href="{% static "css/localization_styles.css" %}" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <script type="text/javascript" src="{% static "js/style.js" %}"> </script>
+<script>
+
+</script>
+    </head>
+    <body>
+        <center>
+<!--            <h1> Reverie Language Technologies </h1>    -->
+            <a href="/index/">
+                <img src="{% static "images/reverie1.png" %}" alt="Reverie Logo"  height="45%" width="40%" />
+            </a>
+            <img src="{% static "images/bubble.gif" %}" alt="Labs Icon" height="60" width="40" /><br/>
+
+            <form action="" method="get">
+                <input placeholder="Enter Text to Translate" type="text" name="search">
+            <!--    <input type="submit" name = "submit" value="Translate" >    -->
+                <input id="submit" type = "submit" value="Translate" name="submit" >
+
+            </form>
+
+            {% if result %}
+                <p>
+                    <b>Input String:</b> {{search}}
+                </p>
+                <br/>
+                <br/>
+                <table>
+                    <tr>
+                        <th>
+                            Localization
+                        </th>
+
+                        <th>Engine</th>
+                    </tr>
+                    <tr>
+                        {% for translation, score in result %}
+                            <tr>
+                                <td>
+                                    {{ translation }}
+                                </td>
+                                <td>{{ score }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tr>
+                </table>
+        </center>
+        <br />
+        <a href="javascript:;" onclick=show() >
+            <button class="button">
+                Request for JSON
+            </button>
+            <br/>
+            <br/>
+        </a>
+        <div id="expand">
+            <pre>
+                {{raw_json}}
+            </pre>
+        </div>
+
+        <script>
+            window.onload = function(){
+            document.getElementById('expand').style.display = 'none';
+            }
+        </script>
+
+        <center>
+             {% else %}
+                <p>
+                    <!-- You submitted an empty form. -->
+                </p>
+            {% endif %}
+        </center>
+
+    </body>
+</html>

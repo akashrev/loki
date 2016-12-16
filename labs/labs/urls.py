@@ -45,6 +45,6 @@ urlpatterns = [
     url(r'^email/$', send_email),
 
     # search assist URLs
-    url(r'^assist/v1/$', search_assist),
+    url(r'^search-assist/v1/$', search_assist),
 
 ]

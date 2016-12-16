@@ -17,8 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from labs.views import index, localization, transliteration, labsTransliterate, labstransliteration,assistedLocalization,requestLocalization
-
 from authentication.views import index, registration, base, user_login, user_logout, success, dashboard, cookiee, send_email
+from search_assist.views import search_assist
 
 
 
@@ -43,5 +43,8 @@ urlpatterns = [
     url(r'^dashboard/$', dashboard),
     url(r'^cookiee/$', cookiee),
     url(r'^email/$', send_email),
+
+    # search assist URLs
+    url(r'^assist/v1/$', search_assist),
 
 ]

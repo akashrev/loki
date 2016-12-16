@@ -3,7 +3,7 @@
 {% load staticfiles %}
 
     <head>
-        <title>Reverie Translator</title>
+        <title>Search Assist - Reverie Language Technology</title>
         <link rel="stylesheet" href="{% static "css/localization_styles.css" %}" />
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
         <script type="text/javascript" src="{% static "js/style.js" %}"> </script>
@@ -17,7 +17,7 @@
             <a href="/index/">
                 <img src="{% static "images/reverie1.png" %}" alt="Reverie Logo"  height="45%" width="40%" />
             </a>
-            <img src="{% static "images/bubble.gif" %}" alt="Labs Icon" height="60" width="40" /><br/>
+            <img src="{% static "images/assist.png" %}" alt="Labs Icon" height="6%" width="6%" /><br/>
 
             <form action="" method="get">
                 <input placeholder="Enter Text to Translate" type="text" name="search">
@@ -27,28 +27,29 @@
             </form>
 
             {% if result %}
+
                 <p>
                     <b>Input String:</b> {{search}}
                 </p>
                 <br/>
                 <br/>
                 <table>
+                    {% for i in result %}
                     <tr>
                         <th>
-                            Localization
+                            Key
                         </th>
 
-                        <th>Engine</th>
+                        <th>Value</th>
                     </tr>
                     <tr>
-                        {% for translation, score in result %}
                             <tr>
                                 <td>
-                                    {{ translation }}
+                                    {{ i }}
                                 </td>
-                                <td>{{ score }}</td>
+                                <td></td>
                             </tr>
-                        {% endfor %}
+                    {% endfor %}
                     </tr>
                 </table>
         </center>

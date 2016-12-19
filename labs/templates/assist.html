@@ -34,26 +34,27 @@
                 <br/>
                 <br/>
                 <table>
+
+                    
                     {% for i in result %}
-                    {% for a,b in i.items %}
-                    <tr>
-                        <th>
-
-                        </th>
-
-                        <th></th>
-                    </tr>
-                    <tr>
+                        {% for a,b in i.items %}
                             <tr>
-                                <td>
-                                    {{ a }}
-                                </td>
-                                <td> {{ b }} </td>
-                                        {% endfor %}
-                                <tr>  </tr>
-
+                                <th></th>
+                                <th></th>
                             </tr>
-                    </tr>
+
+                                <tr>
+                                    <td>
+                                        {{ a }}
+                                    </td>
+                                    <td>
+                                        {{ b }}
+                                    </td>
+                                </tr>
+
+                        {% endfor %}
+                    <tr></tr>
+
                     {% endfor %}
 
                 </table>

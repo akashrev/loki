@@ -23,50 +23,33 @@ def assist_api(message):
     json_response = json.dumps(response.json(), ensure_ascii=False, indent=4, sort_keys=True).encode('utf-8')
     new_json = json.loads(json_response)
     #    return json_response
-    c = []
-    for key, entities in new_json.items():  # initial json
+    f_set = []                                      # list to return value to the template
+    for key, entities in new_json.items():          # initial json
+        if key == 'entities':                       # accessing data for entities key
 
-        d = dict()
-        e = []
-        if key == 'entities':  # accessing data for entities key
+            for item in entities:                   # iterating list of 'entities'\'s value
+                item_list = []                      # list to get item in 'entities' key
+                sub_dict = dict()                   # to create dictionary of diff. items
+                item_list.append(item)
 
-            for item in entities:  # iterating list of 'entities' value
-                a = []
-                b = []
-                d = dict()
-                b.append(item)
-                for i, item in enumerate(b):
-
-                    # print 'raw: ',item
-                    # print i
-
-                    for key, value in item.items():
-
-                        if key == "category":
-                            # print value
-                            for key, ivalue in value.items():
-                                d[key] = ivalue
-                                # print d
-
-                        elif key == 'terms':
+                for item in item_list:                          # iterating items from list
+                    for key, value in item.items():             # iterating dictionary from items of list.
+                        if key == "category":                   # searching for key 'category'
+                            for key, ivalue in value.items():   # appending 'category' details
+                                sub_dict[key] = ivalue
+                        elif key == 'terms':                    # appending 'terms' details
                             for item in value:
                                 for keys, values in item.items():
                                     if keys == 'token':
                                         # print values
                                         nkey = values
                                     else:
-                                        d[nkey] = values
-                    # print 'clean: ',d
-                    if d == ' ':
-                        continue
-                    else:
-                        c.append(d)
+                                        sub_dict[nkey] = values
 
-                    print '\n \n'
-                    break
-    print c
+                    f_set.append((sub_dict))              # appending dictinaries to 'f_set' list
+#    print f_set
+    return f_set, json_response
 
-    return c, json_response
 
 #######################################
 # function for search assist on labs
@@ -86,4 +69,4 @@ def search_assist(request):
         return render(request, 'assist.html', {
             })
 
-####################################################################################################################
+#######################################################################################################################

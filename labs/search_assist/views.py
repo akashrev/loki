@@ -24,32 +24,47 @@ def assist_api(message):
     new_json = json.loads(json_response)
     #    return json_response
     c = []
-    for key, entities in new_json.items():
-        if key == 'entities':
-            for item in entities:
-                a = b = []
+    for key, entities in new_json.items():  # initial json
+
+        d = dict()
+        e = []
+        if key == 'entities':  # accessing data for entities key
+
+            for item in entities:  # iterating list of 'entities' value
+                a = []
+                b = []
+                d = dict()
                 b.append(item)
-                for item in b:
+                for i, item in enumerate(b):
+
+                    # print 'raw: ',item
+                    # print i
+
                     for key, value in item.items():
+
                         if key == "category":
-                            for key, value in value.items():
-                                print key, value
-                                c.append(key)
-                                c.append(value)
-                        elif key == "terms":
+                            # print value
+                            for key, ivalue in value.items():
+                                d[key] = ivalue
+                                # print d
+
+                        elif key == 'terms':
                             for item in value:
-                                for key, value in item.items():
-                                    a = []
-                                    if isinstance(value, list):
-                                        for i in value:
-                                            a.append(i)
-                                            # print i
+                                for keys, values in item.items():
+                                    if keys == 'token':
+                                        # print values
+                                        nkey = values
                                     else:
-                                        print value, ':'
-                                        c.append(value)
-                                print a
-                                c.append(a)
-                                print
+                                        d[nkey] = values
+                    # print 'clean: ',d
+                    if d == ' ':
+                        continue
+                    else:
+                        c.append(d)
+
+                    print '\n \n'
+                    break
+    print c
 
     return c, json_response
 

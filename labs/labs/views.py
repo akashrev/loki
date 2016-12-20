@@ -48,9 +48,9 @@ def translator_engine(message):
                         translation_list.append(value)  # append translation data in a list
                     if key == 'engine':
                         #output = round(value, 3)
-                        translation_score.append(value)    # append translation_score data in a list
+                        translation_score.append(value)    # append 'translation_score' data in a list
     #translation_list = [x.encode('utf-8') for x in translation_list]
-    zipped = zip(translation_list, translation_score)   #zipped becomes dictionary ( hindi o/p : engine_name)
+    zipped = zip(translation_list, translation_score)   # 'zipped' becomes dictionary { hindi o/p : engine_name }
     return zipped, json_response
 
 

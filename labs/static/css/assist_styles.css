@@ -1,0 +1,83 @@
+
+/* body */
+body{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 80%;
+    padding : 10% 20% 10px 20%;
+    }
+
+
+/* table*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+ text-align: left;
+    padding: 5px;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #aaa;
+    color: white;
+}
+
+
+/* search box and submit button */
+input[type=text] {
+    width: 60%;
+    padding: 9px 15px;
+    margin: 8px 0px 8px 0px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 13%;
+    padding: 9px 15px;
+    margin: 8px 0px 8px 0px;
+    box-sizing: border-box;
+}
+
+
+/* raw_json block */
+div#expand {
+    display:block;
+    border-style: dashed;
+    border-color : #999;
+    padding: 45px;
+    border-radius: 8px;
+}
+
+
+/* JSON button */
+.button {
+    background-color: #999; /* Gray */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 8px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    outline:none;
+}
+
+.button:hover {
+    box-shadow: 0 9px 12px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button:active {
+  background-color: #bbb;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

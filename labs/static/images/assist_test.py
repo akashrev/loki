@@ -3,7 +3,7 @@
 
 import requests, json
 
-message = " "
+message = "aksh is a "
 #message = " Be patient! It may take a little while to generate your strings"
 
 url = "http://search.beta.reverieinc.com/search"
@@ -36,7 +36,7 @@ try:
                         if key == "category":  # searching for key 'category'
                             for key, ivalue in value.items():  # appending 'category' details
                                 sub_dict[key] = ivalue
-                                sub_dict = {'one': sub_dict}
+                                sub_dict = {'a': sub_dict}
                         elif key == 'terms':  # appending 'terms' details
                             for item in value:
                                 for keys, values in item.items():
@@ -58,9 +58,9 @@ try:
 
     for i in json.loads(fj):
         for k, v in i.items():
-            if k == 'one':
+            if k == 'a':
                 for q, w in v.items():
-                    print 'qwerty', q, w
+                    print 'heading', q, w
             else:
                 print k, v
         print

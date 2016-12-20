@@ -35,14 +35,19 @@
                 <br/>
                 <table>
 
-                    
+
                     {% for i in result %}
                         {% for a,b in i.items %}
-                            <tr>
-                                <th></th>
-                                <th></th>
-                            </tr>
 
+                        {% if a == "1" %}
+                            {% for q,w in b.items %}
+                            <tr>
+                                <th>{{ q }}</th>
+                                <th>{{ w }}</th>
+                            </tr>
+                            {% endfor %}
+
+                                {% else %}
                                 <tr>
                                     <td>
                                         {{ a }}
@@ -51,6 +56,7 @@
                                         {{ b }}
                                     </td>
                                 </tr>
+                        {% endif %}
 
                         {% endfor %}
                     <tr></tr>

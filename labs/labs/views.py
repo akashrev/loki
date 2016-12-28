@@ -48,9 +48,9 @@ def translator_engine(message):
                         translation_list.append(value)  # append translation data in a list
                     if key == 'engine':
                         #output = round(value, 3)
-                        translation_score.append(value)    # append translation_score data in a list
+                        translation_score.append(value)    # append 'translation_score' data in a list
     #translation_list = [x.encode('utf-8') for x in translation_list]
-    zipped = zip(translation_list, translation_score)   #zipped becomes dictionary ( hindi o/p : engine_name)
+    zipped = zip(translation_list, translation_score)   # 'zipped' becomes dictionary { hindi o/p : engine_name }
     return zipped, json_response
 
 
@@ -165,7 +165,7 @@ def transliteration(request):
     if request.GET.get('search'):
         message = request.GET.get('search')     # reading text from textbox
         language = request.GET['language']      # fetching selected language
-        output = transliterateapi_request(message,language) # calling function, sending text and language as parameters
+        output = transliterateapi_request(message,language, 1) # calling function, sending text and language as parameters
         return render(request, 'transliteration.html', {    # returning output text to the webpage
             'output': output, 'search': message, "username": username
     })

@@ -3,8 +3,8 @@
 {% load staticfiles %}
 
     <head>
-        <title>Reverie Translator</title>
-        <link rel="stylesheet" href="{% static "css/localization_styles.css" %}" />
+        <title>Search Assist - Reverie Language Technology</title>
+        <link rel="stylesheet" href="{% static "css/assist_styles.css" %}" />
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
         <script type="text/javascript" src="{% static "js/style.js" %}"> </script>
 <script>
@@ -17,7 +17,7 @@
             <a href="/index/">
                 <img src="{% static "images/reverie1.png" %}" alt="Reverie Logo"  height="45%" width="40%" />
             </a>
-            <img src="{% static "images/bubble.gif" %}" alt="Labs Icon" height="60" width="40" /><br/>
+            <img src="{% static "images/assist.png" %}" alt="Labs Icon" height="6%" width="6%" /><br/>
 
             <form action="" method="get">
                 <input placeholder="Enter Text to Translate" type="text" name="search">
@@ -27,29 +27,42 @@
             </form>
 
             {% if result %}
+
                 <p>
                     <b>Input String:</b> {{search}}
                 </p>
                 <br/>
-                <br/>
-                <table>
-                    <tr>
-                        <th>
-                            Localization
-                        </th>
 
-                        <th>Engine</th>
-                    </tr>
-                    <tr>
-                        {% for translation, score in result %}
+                <table>
+
+
+                    {% for i in result %}
+                        {% for a,b in i.items %}
+
+                        {% if a == "a" %}
+                            {% for q,w in b.items %}
                             <tr>
-                                <td>
-                                    {{ translation }}
-                                </td>
-                                <td>{{ score }}</td>
+                                <th>{{ q }}</th>
+                                <th>{{ w }}</th>
                             </tr>
+                            {% endfor %}
+
+                                {% else %}
+                                <tr>
+                                    <td>
+                                        {{ a }}
+                                    </td>
+                                    <td>
+                                        {{ b }}
+                                    </td>
+                                </tr>
+                        {% endif %}
+
                         {% endfor %}
-                    </tr>
+                    <tr></tr>
+
+                    {% endfor %}
+
                 </table>
         </center>
         <br />

@@ -81,16 +81,29 @@ body{
 }
 
 h3{
-position:relative;
+    position:relative;
     top:125px;
     left:px;
 }
 
-.right p{
+.right p#gfi1{
     position:absolute;
     top:40px;
     right:107px;
 }
+
+.right p#gfi2{
+    position:absolute;
+    top:160px;
+    right:107px;
+}
+
+.right p#gfi3{
+    position:absolute;
+    top:270px;
+    right:107px;
+}
+
 
 .logo img{
     position:fixed;

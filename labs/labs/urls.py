@@ -26,7 +26,6 @@ urlpatterns = [
     # labs URLs
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
-    url(r'^localization/v1/$', localization),
     url(r'^transliteration/v1/$', transliteration),
     url(r'^transliteration/v2/$', labsTransliterate),
     url(r'^transliteration/api/$', labstransliteration),
